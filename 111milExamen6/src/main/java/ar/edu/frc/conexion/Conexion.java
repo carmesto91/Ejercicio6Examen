@@ -1,5 +1,5 @@
 
-package Conexion;
+package ar.edu.frc.conexion;
 import java.sql.*;
 import java.util.*;
 

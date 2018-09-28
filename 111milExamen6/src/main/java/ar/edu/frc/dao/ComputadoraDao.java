@@ -5,6 +5,9 @@
  */
 package ar.edu.frc.dao;
 
+import ar.edu.frc.conexion.Conexion;
+import ar.edu.frc.milexamen6.Computadora;
+
 /**
  *
  * @author alumno
@@ -12,5 +15,22 @@ package ar.edu.frc.dao;
 public class ComputadoraDao {
     
     
+    Conexion con = Conexion.getInstance();
+    
+    public ComputadoraDao(){
+        
+        
+        
+    }
+    
+    
+    public void agregarComputadora(Computadora computadora){
+        
+        
+        
+        
+        
+        
+    } 
     
 }
