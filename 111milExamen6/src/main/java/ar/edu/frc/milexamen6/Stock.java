@@ -12,22 +12,21 @@ import java.util.List;
  * @author alumno
  */
 public class Stock {
+   private  List<ItemStock> items;
     
-    public Stock(){
+    public Stock()
+    {
     
-    item = null;
+        items = new ArrayList<ItemStock>();
     
     }
-    
-    
-    List<ItemStock> item;
 
     public List<ItemStock> getItem() {
-        return item;
+        return items;
     }
-
+// esto esta mal
     public void setItem(List<ItemStock> item) {
-        this.item = item;
+        this.items. = item;
     }
     
     
