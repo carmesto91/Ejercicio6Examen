@@ -51,4 +51,5 @@ public class ItemStock {
         this.ultimaFechaModificacion = ultimaFechaModificacion;
     }
  
+    
 }
