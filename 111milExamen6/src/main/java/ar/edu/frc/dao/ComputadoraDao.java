@@ -28,7 +28,7 @@ public class ComputadoraDao {
     public void agregarComputadora(Computadora computadora){
         
         
-        
+        String consulta = "insert into computadora values("+computadora.getId()+",'"+computadora.getNombre()+"','"+computadora.getModelo()+"',"+computadora.getPrecio()+");";
         
         
         
