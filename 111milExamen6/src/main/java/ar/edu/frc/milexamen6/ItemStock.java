@@ -30,6 +30,14 @@ public class ItemStock {
         cantidad=0;
     }
 
+    public static int getIdItemStock() {
+        return idItemStock;
+    }
+
+    public static void setIdItemStock(int idItemStock) {
+        ItemStock.idItemStock = idItemStock;
+    }
+
     public ItemStock(Computadora computadora, int cantidad, Date ultimaFechaModificacion) {
         this.computadora = computadora;
         this.cantidad = cantidad;
