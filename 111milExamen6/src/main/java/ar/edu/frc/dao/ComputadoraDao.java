@@ -7,6 +7,7 @@ package ar.edu.frc.dao;
 
 import ar.edu.frc.conexion.Conexion;
 import ar.edu.frc.milexamen6.Computadora;
+import java.sql.*;
 
 /**
  *
