@@ -5,6 +5,7 @@
  */
 package ar.edu.frc.milexamen6;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,9 +25,9 @@ public class Stock {
     public List<ItemStock> getItem() {
         return items;
     }
-// esto esta mal
+
     public void setItem(List<ItemStock> item) {
-        this.items. = item;
+        this.items= item;
     }
     
     
