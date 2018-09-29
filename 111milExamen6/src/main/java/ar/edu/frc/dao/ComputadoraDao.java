@@ -33,5 +33,10 @@ public class ComputadoraDao {
         
         
     } 
+
+    Computadora buscar(int idComputadora) {
+        //
+        return null;
+    }
     
 }
