@@ -12,30 +12,19 @@ import java.util.Date;
  * @author alumno
  */
 public class ItemStock {
- 
- static int idItemStock;   
+  
  private Computadora computadora;
  private int cantidad;
  private Date ultimaFechaModificacion;
  
  public ItemStock(int id, Computadora c, int cantidad){
-     idItemStock=id;
      computadora=c;
      this.cantidad=cantidad;
  }
 
     public ItemStock() {
-        idItemStock=0;
         computadora=null;
         cantidad=0;
-    }
-
-    public static int getIdItemStock() {
-        return idItemStock;
-    }
-
-    public static void setIdItemStock(int idItemStock) {
-        ItemStock.idItemStock = idItemStock;
     }
 
     public ItemStock(Computadora computadora, int cantidad, Date ultimaFechaModificacion) {
