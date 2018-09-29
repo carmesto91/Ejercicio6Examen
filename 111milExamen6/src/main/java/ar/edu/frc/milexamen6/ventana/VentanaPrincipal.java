@@ -1,20 +1,52 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ar.edu.frc.milexamen6.ventana;
 
-/**
- *
- * @author alumno
- */
-public class VentanaPrincipal {
+package ar.edu.frc.milexamen6.ventana;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+
+public class VentanaPrincipal extends JFrame implements ActionListener
+{
+    private JButton agregarComputadora, comprar;
+    private JLabel Bienvenida;
     
-    public VentanaPrincipal(){
-        
-        
-        
+    public VentanaPrincipal()
+    {
+       setLayout(null);
+       setTitle("Biemvenido");
+       
+       Bienvenida = new JLabel("BIENVENIDO! ELIJA SU OPCIÓN");
+       Bienvenida.setBounds(20,50,200,30);
+       add(Bienvenida);
+       
+       agregarComputadora = new JButton("Agregar Computadora");
+       agregarComputadora.setBounds(20,100,170,30);
+       agregarComputadora.addActionListener(this);
+       add(agregarComputadora);
+       
+       comprar = new JButton("Comprar Computadora");
+       comprar.setBounds(200,100,150,30);
+       comprar.addActionListener(this);
+       add(comprar); 
+    }
+    public void actionPerformed(ActionEvent e)
+    {
+        if(e.getSource() == agregarComputadora)
+        {
+            
+        }
+        if(e.getSource() == comprar)
+        {
+            
+        }
+    }
+    public static void main(String args[])
+    {
+        VentanaPrincipal x = new VentanaPrincipal();
+        x.setBounds(0,0,400,250);
+        x.setLocationRelativeTo(null);
+        x.setResizable(false);
+        x.setVisible(true);
     }
     
 }
