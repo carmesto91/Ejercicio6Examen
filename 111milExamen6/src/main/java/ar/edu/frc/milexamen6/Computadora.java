@@ -2,10 +2,12 @@ package ar.edu.frc.milexamen6;
 
 public class Computadora {
     
-    private String nombre;
-    private int precio;
     private int id;
+    private String nombre;
     private String modelo;
+    private int precio;
+    
+    
 
     public int getId() {
         return id;
@@ -23,10 +25,14 @@ public class Computadora {
         this.modelo = modelo;
     }
 
-    public Computadora(String nombre, int precio) {
+    public Computadora(int id,String nombre , String modelo,int precio) {
         this.nombre = nombre;
         this.precio = precio;
+        this.id = id;
+        this.modelo = modelo;
     }
+
+    
 
     public String getNombre() {
         return nombre;

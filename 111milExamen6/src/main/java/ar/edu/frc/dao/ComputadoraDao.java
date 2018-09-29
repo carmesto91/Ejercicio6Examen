@@ -8,6 +8,10 @@ package ar.edu.frc.dao;
 import ar.edu.frc.conexion.Conexion;
 import ar.edu.frc.milexamen6.Computadora;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -32,6 +36,37 @@ public class ComputadoraDao {
         
         
         
-    } 
+    }
+    
+    
+    public List<Computadora> devolverComputadora(){
+        
+        List<Computadora> computadora = new ArrayList();
+        
+        
+        
+        try {
+            
+            ResultSet rs = con.consultarSQL("select * from computadora");
+            
+            while(rs.next()){
+                
+                Computadora comp = new Computadora(rs.getInt(1),rs.getString("nombre"),rs.getString("modelo"),rs.getInt(4));
+                
+                computadora.add(comp);
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ComputadoraDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return computadora;
+        
+        
+        
+        
+    }
+    
+    
     
 }
