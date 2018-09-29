@@ -19,7 +19,7 @@ public class Conexion
     private Conexion()
     {
         try{
-            cn = DriverManager.getConnection("jdbc/mysql://localhost:3306/", "root", "");
+            cn = DriverManager.getConnection("jdbc/mysql://localhost:3306/ControlStock", "root", "");
         }catch(SQLException e)
         {
             e.printStackTrace();
