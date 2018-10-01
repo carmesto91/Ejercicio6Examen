@@ -13,7 +13,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
     public VentanaPrincipal()
     {
        setLayout(null);
-       setTitle("Biemvenido");
+       setTitle("Bienvenido");
        
        Bienvenida = new JLabel("BIENVENIDO! ELIJA SU OPCIÓN");
        Bienvenida.setBounds(20,50,200,30);
@@ -25,7 +25,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
        add(agregarComputadora);
        
        comprar = new JButton("Comprar Computadora");
-       comprar.setBounds(200,100,150,30);
+       comprar.setBounds(200,100,170,30);
        comprar.addActionListener(this);
        add(comprar); 
     }
@@ -42,6 +42,12 @@ public class VentanaPrincipal extends JFrame implements ActionListener
         }
         if(e.getSource() == comprar)
         {
+             Venta v = new Venta();
+             v.setBounds(0,0,400,250);
+             v.setLocationRelativeTo(null);
+             v.setResizable(false);
+             v.setVisible(true);
+        
             
         }
     }
