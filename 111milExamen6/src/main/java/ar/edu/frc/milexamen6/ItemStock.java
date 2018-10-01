@@ -56,6 +56,11 @@ public class ItemStock {
     public void setUltimaFechaModificacion(Date ultimaFechaModificacion) {
         this.ultimaFechaModificacion = ultimaFechaModificacion;
     }
+
+    @Override
+    public String toString() {
+        return "ItemStock{" + "computadora=" + computadora + ", cantidad=" + cantidad + ", ultimaFechaModificacion=" + ultimaFechaModificacion + "}/n";
+    }
  
     
 }
