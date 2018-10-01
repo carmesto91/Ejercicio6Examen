@@ -6,6 +6,7 @@
 package ar.edu.frc.milexamen6;
 
 import ar.edu.frc.milexamen6.ventana.VentanaPrincipal;
+import javax.swing.JFrame;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Ejecutable {
         x.setLocationRelativeTo(null);
         x.setResizable(false);
         x.setVisible(true);
-        
+        x.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
 }
