@@ -5,6 +5,8 @@
  */
 package ar.edu.frc.milexamen6;
 
+import ar.edu.frc.milexamen6.ventana.VentanaPrincipal;
+
 /**
  *
  * @author alumno
