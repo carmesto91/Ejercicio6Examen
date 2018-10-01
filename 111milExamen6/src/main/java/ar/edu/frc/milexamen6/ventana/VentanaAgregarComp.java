@@ -30,6 +30,9 @@ public class VentanaAgregarComp extends JFrame{
         
         configurarVentana();
         
+        
+        // panel superior  --> etiqueta COMPUTADORA
+        
         panelSuperior = new JPanel();
         
         etiqComputadora = new JLabel("COMPUTADORA");
@@ -38,6 +41,7 @@ public class VentanaAgregarComp extends JFrame{
         
         add(panelSuperior,BorderLayout.NORTH);
         
+        // panel inferior --> botones
         
         panelInferior = new JPanel();
         
