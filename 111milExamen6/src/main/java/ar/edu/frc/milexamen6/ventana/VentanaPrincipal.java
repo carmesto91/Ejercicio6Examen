@@ -40,13 +40,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener
             
         }
     }
-    public static void main(String args[])
-    {
-        VentanaPrincipal x = new VentanaPrincipal();
-        x.setBounds(0,0,400,250);
-        x.setLocationRelativeTo(null);
-        x.setResizable(false);
-        x.setVisible(true);
-    }
+    
     
 }
