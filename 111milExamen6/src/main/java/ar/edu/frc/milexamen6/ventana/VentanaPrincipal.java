@@ -33,7 +33,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
     {
         if(e.getSource() == agregarComputadora)
         {
-            
+            VentanaAgregarComp agregComp = new VentanaAgregarComp();
         }
         if(e.getSource() == comprar)
         {

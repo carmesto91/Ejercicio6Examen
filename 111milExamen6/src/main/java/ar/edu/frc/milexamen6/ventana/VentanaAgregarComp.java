@@ -5,6 +5,7 @@
  */
 package ar.edu.frc.milexamen6.ventana;
 
+import java.awt.BorderLayout;
 import javax.swing.*;
 
 /**
@@ -19,7 +20,7 @@ public class VentanaAgregarComp extends JFrame{
     
     JButton ok,cancelar;
     
-    JPanel etiqComp,etiqIdCampo,etiqNombreCampo,etiqModeloCampo,etiqPrecioCampo,botones;
+    JPanel panelSuperior,panelCentro,panelInferior;
     
     
     
@@ -29,7 +30,26 @@ public class VentanaAgregarComp extends JFrame{
         
         configurarVentana();
         
+        panelSuperior = new JPanel();
         
+        etiqComputadora = new JLabel("COMPUTADORA");
+        
+        panelSuperior.add(etiqComputadora);
+        
+        add(etiqComputadora,BorderLayout.NORTH);
+        
+        
+        panelInferior = new JPanel();
+        
+        ok = new JButton("OK");
+        
+        cancelar = new JButton("CANCELAR");
+        
+        panelInferior.add(ok);
+        
+        panelInferior.add(cancelar);
+        
+        add(panelInferior,BorderLayout.SOUTH);
         
         
         
