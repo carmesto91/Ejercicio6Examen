@@ -5,6 +5,8 @@
  */
 package ar.edu.frc.milexamen6.ventana;
 
+import ar.edu.frc.dao.ComputadoraDao;
+import ar.edu.frc.milexamen6.Computadora;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -138,8 +140,14 @@ public class VentanaAgregarComp extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
+        int identidad=Integer.parseInt(campoId.getText());
+        int precio=Integer.parseInt(campoPrecio.getText());
+        Computadora c=new Computadora(identidad, campoNombre.getText(), campoModelo.getText(), precio);
+        ComputadoraDao compDao=ComputadoraDao.getInstance();
+        compDao.agregarComputadora(c);
         
-        
+        JOptionPane.showMessageDialog(null, "Computadora agregado con exito");
+        System.exit(0);
     }
     
 }

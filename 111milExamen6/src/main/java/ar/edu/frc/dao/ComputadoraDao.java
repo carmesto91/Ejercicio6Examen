@@ -20,14 +20,28 @@ import java.util.logging.Logger;
 public class ComputadoraDao {
     
     
-    Conexion con = Conexion.getInstance();
+    private static ComputadoraDao instance;
     
-    public ComputadoraDao(){
+    public static ComputadoraDao getInstance(){
+        
+        if(instance == null){
+            
+            instance = new ComputadoraDao();
+            
+        }
+        
+        return instance;
+        
+        
+    }
+    
+    private ComputadoraDao(){
         
         
         
     }
     
+    Conexion con = Conexion.getInstance();
     
     public void agregarComputadora(Computadora computadora){
         

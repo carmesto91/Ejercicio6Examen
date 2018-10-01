@@ -27,7 +27,7 @@ public class ItemStockDao {
                 item.setCantidad(resultados.getInt("Cantidad"));
 
                 int idComputadora = resultados.getInt("Id_computadora");
-                Computadora computadora = new ComputadoraDao().buscar(idComputadora);
+                Computadora computadora = ComputadoraDao.getInstance().buscar(idComputadora);
                 item.setComputadora(computadora);
 
                 listado.add(item);
