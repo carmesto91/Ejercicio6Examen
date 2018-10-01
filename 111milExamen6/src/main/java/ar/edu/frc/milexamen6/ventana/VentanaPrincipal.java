@@ -13,7 +13,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
     public VentanaPrincipal()
     {
        setLayout(null);
-       setTitle("Biemvenido");
+       setTitle("Bienvenido");
        
        Bienvenida = new JLabel("BIENVENIDO! ELIJA SU OPCIÓN");
        Bienvenida.setBounds(20,50,200,30);
