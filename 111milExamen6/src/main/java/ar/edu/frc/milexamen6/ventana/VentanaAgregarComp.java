@@ -36,7 +36,7 @@ public class VentanaAgregarComp extends JFrame{
         
         panelSuperior.add(etiqComputadora);
         
-        add(etiqComputadora,BorderLayout.NORTH);
+        add(panelSuperior,BorderLayout.NORTH);
         
         
         panelInferior = new JPanel();
