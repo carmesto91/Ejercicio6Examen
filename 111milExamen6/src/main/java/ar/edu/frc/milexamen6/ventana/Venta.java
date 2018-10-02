@@ -34,13 +34,20 @@ public class Venta extends JFrame implements ActionListener
         
         btnConsultar = new JButton("Consultar");
         btnConsultar.setBounds(80,130,100,30);
+        btnConsultar.addActionListener(this);
         add(btnConsultar);
+        
     }
     public void actionPerformed(ActionEvent e)
     {
         if(e.getSource() == btnConsultar)
         {
-            
+           StockDisponible sd = new StockDisponible();
+           sd.setBounds(0,0,330,500);
+           sd.setLocationRelativeTo(null);
+           sd.setResizable(false);
+           sd.setVisible(true);
+           sd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         }
     }
     
