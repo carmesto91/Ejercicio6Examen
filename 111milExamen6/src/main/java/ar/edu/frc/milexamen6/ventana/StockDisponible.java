@@ -38,12 +38,16 @@ public class StockDisponible extends JFrame implements ActionListener
         btnComprar.setBounds(20,380,120,30);
         add(btnComprar);
         
-        btnCancelar = new JButton("Comprar");
+        btnCancelar = new JButton("Cancelar");
         btnCancelar.setBounds(150,380,120,30);
         add(btnCancelar);
     }
     public void actionPerformed(ActionEvent e)
     {
+        if(e.getSource()== btnCancelar)
+        {
+            
+        }
         
     }
 }
