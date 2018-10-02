@@ -27,11 +27,11 @@ public class StockDisponible extends JFrame implements ActionListener
         add(scroll);
         
         lblModelo = new JLabel("Modelo: ");
-        lblModelo.setBounds(20,330,100,30);
+        lblModelo.setBounds(20,330,60,30);
         add(lblModelo);
         
         txtModelo = new JTextField();
-        txtModelo.setBounds(130,330,140,30);
+        txtModelo.setBounds(80,330,190,30);
         add(txtModelo);
         
         btnComprar = new JButton("Comprar");
@@ -40,13 +40,14 @@ public class StockDisponible extends JFrame implements ActionListener
         
         btnCancelar = new JButton("Cancelar");
         btnCancelar.setBounds(150,380,120,30);
+        btnCancelar.addActionListener(this);
         add(btnCancelar);
     }
     public void actionPerformed(ActionEvent e)
     {
         if(e.getSource()== btnCancelar)
         {
-            
+            System.exit(0);
         }
         
     }
