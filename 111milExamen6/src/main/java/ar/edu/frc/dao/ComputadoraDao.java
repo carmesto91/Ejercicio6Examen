@@ -47,7 +47,7 @@ public class ComputadoraDao {
         
         
         String consulta = "insert into computadora values("+computadora.getId()+",'"+computadora.getNombre()+"','"+computadora.getModelo()+"',"+computadora.getPrecio()+");";
-        
+        con.ejecutarSQL(consulta);
         
         
     } 

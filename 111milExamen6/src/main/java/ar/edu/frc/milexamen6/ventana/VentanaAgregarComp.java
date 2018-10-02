@@ -98,7 +98,7 @@ public class VentanaAgregarComp extends JFrame implements ActionListener{
         panelCentro.add(campoPrecio);
         
         add(panelCentro,BorderLayout.CENTER);
-        
+        ok.addActionListener(this);
         cancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -123,7 +123,7 @@ public class VentanaAgregarComp extends JFrame implements ActionListener{
         
         setLocationRelativeTo(this);
         
-        
+        setResizable(false);
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
