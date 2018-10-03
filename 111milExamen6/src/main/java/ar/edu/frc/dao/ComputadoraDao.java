@@ -58,33 +58,38 @@ public class ComputadoraDao {
         return null;
     }
     
-    public Computadora buscar(String nombre, String modelo) {
+    public Computadora buscar(String nombre, String modelo, int preciodesde, int preciohasta) {
+                    
+        List<Computadora> computadora = new ArrayList();
+
         try {
             
-            ResultSet rs = con.consultarSQL(
-                    "select * from computadora where nombre like '$"+nombre+"$' ||modelo like '$"+modelo+"$'");
+            ResultSet rs = Conexion.getInstance().consultarSQL("select * "
+                            + " from computadora "
+                            + " where nombre like '$"+nombre+"$' "
+                                    + " and modelo like '$"+modelo+"$'"
+                                    + " and precio >'$"+preciodesde+"$'"
+                                    + " and precio < '$"+preciohasta+"$'"
+            );
             
             while(rs.next()){
                 
                 Computadora comp = new Computadora(rs.getInt(1),rs.getString("nombre"),rs.getString("modelo"),rs.getInt(4));
                 
-                return comp;
+                computadora.add(comp);                
             }
         } catch (SQLException ex) {
             Logger.getLogger(ComputadoraDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        
+        return computadora;        
     }
     
     
     public List<Computadora> devolverComputadora(){
         
         List<Computadora> computadora = new ArrayList();
-        
-        
-        
-        
-        
+
         try {
             
             ResultSet rs = Conexion.getInstance().consultarSQL("select * from computadora");
