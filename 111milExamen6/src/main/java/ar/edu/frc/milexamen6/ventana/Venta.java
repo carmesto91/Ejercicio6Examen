@@ -1,5 +1,6 @@
 
 package ar.edu.frc.milexamen6.ventana;
+import ar.edu.frc.dao.ComputadoraDao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -67,9 +68,15 @@ public class Venta extends JFrame implements ActionListener
         
     }
     public void actionPerformed(ActionEvent e)
-    {   
+    {   int pDesde=Integer.parseInt(comboPrecioDesde.getSelectedItem().toString());
+        int pHasta=Integer.parseInt(comboPrecioHasta.getSelectedItem().toString());
+        
+       //ComputadoraDao.getInstance().buscar(txtMarca.getText(), txtNombre.getText(), pDesde,pHasta);
         if(e.getSource() == btnConsultar)
         {
+            if( ComputadoraDao.getInstance().buscar(txtMarca.getText(), txtNombre.getText(), pDesde,pHasta)==null){
+                JOptionPane.showMessageDialog(null, "no se encontro Computadora");
+            }else{
            StockDisponible sd = new StockDisponible();
            sd.setBounds(0,0,430,500);
            sd.setLocationRelativeTo(null);
@@ -77,7 +84,7 @@ public class Venta extends JFrame implements ActionListener
            sd.setVisible(true);
            sd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
            
-        }
+        }}
     }
     
 }
