@@ -73,7 +73,7 @@ public class Venta extends JFrame implements ActionListener
     {   int pDesde=Integer.parseInt(comboPrecioDesde.getSelectedItem().toString());
         int pHasta=Integer.parseInt(comboPrecioHasta.getSelectedItem().toString());
         ArrayList a=new ArrayList();
-        a.add(ComputadoraDao.getInstance().buscar(txtMarca.getText(), txtNombre.getText(), pDesde,pHasta));
+        a.addAll(ComputadoraDao.getInstance().buscar(txtMarca.getText(), txtNombre.getText(), pDesde,pHasta));
      // ComputadoraDao.getInstance().buscar(txtMarca.getText(), txtNombre.getText(), pDesde,pHasta);
         if(e.getSource() == btnConsultar)
         {
