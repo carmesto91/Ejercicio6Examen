@@ -6,9 +6,9 @@ import javax.swing.*;
 
 public class Venta extends JFrame implements ActionListener 
 {
-    private JLabel lblMarca, lblPrecio;
-    private JTextField txtMarca;
-    private JComboBox comboPrecio;
+    private JLabel lblMarca, lblPrecioHasta, lblPrecioDesde, lblNombre;
+    private JTextField txtMarca, txtNombre;
+    private JComboBox comboPrecioHasta, comboPrecioDesde;
     private JButton btnConsultar;
     
     public Venta()
@@ -24,16 +24,33 @@ public class Venta extends JFrame implements ActionListener
         txtMarca.setBounds(120,20,150,30);
         add(txtMarca);
         
-        lblPrecio = new JLabel("Precio: ");
-        lblPrecio.setBounds(20,60,100,30);
-        add(lblPrecio);
+        lblNombre=new JLabel("Nombre:");
+        lblNombre.setBounds(20, 60, 100, 30);
+        add(lblNombre);
         
-        comboPrecio = new JComboBox();
-        comboPrecio.setBounds(120,60,150,30);
-        add(comboPrecio);
+        txtNombre=new JTextField();
+        txtNombre.setBounds(120, 60, 150, 30);
+        add(txtNombre);
+       
+        lblPrecioDesde = new JLabel("Precio Desde: ");
+        lblPrecioDesde.setBounds(20,100,100,30);
+        add(lblPrecioDesde);
+        
+        comboPrecioDesde = new JComboBox();
+        comboPrecioDesde.setBounds(120,100,150,30);
+        add(comboPrecioDesde);
+                
+        
+        lblPrecioHasta = new JLabel("Precio Hasta: ");
+        lblPrecioHasta.setBounds(20,150,100,30);
+        add(lblPrecioHasta);
+        
+        comboPrecioHasta = new JComboBox();
+        comboPrecioHasta.setBounds(120,150,150,30);
+        add(comboPrecioHasta);
         
         btnConsultar = new JButton("Consultar");
-        btnConsultar.setBounds(80,130,100,30);
+        btnConsultar.setBounds(80,230,100,30);
         btnConsultar.addActionListener(this);
         add(btnConsultar);
         
@@ -48,6 +65,7 @@ public class Venta extends JFrame implements ActionListener
            sd.setResizable(false);
            sd.setVisible(true);
            sd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+           
         }
     }
     
