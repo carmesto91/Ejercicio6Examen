@@ -60,7 +60,7 @@ public class StockDisponible extends JFrame implements ActionListener
                 
                 for(Computadora comp:listaComputadora){
                     
-                    area.append("ID: "+comp.getId()+" MODELO: " + comp.getModelo()+" NOMBRE: " + comp.getNombre()+" PRECIO: " + comp.getPrecio());
+                    area.append("ID: "+comp.getId()+" | MODELO: " + comp.getModelo()+" | NOMBRE: " + comp.getNombre()+" | PRECIO: " + comp.getPrecio());
                     area.append("\n");
                     
                     
