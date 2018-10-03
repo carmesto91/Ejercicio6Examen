@@ -56,12 +56,13 @@ public class Venta extends JFrame implements ActionListener
         comboPrecioHasta = new JComboBox();
         comboPrecioHasta.setBounds(120,150,150,30);
         add(comboPrecioHasta);
+        comboPrecioHasta.addItem(100000);
         comboPrecioHasta.addItem(10000);
         comboPrecioHasta.addItem(20000);
         comboPrecioHasta.addItem(30000);
         comboPrecioHasta.addItem(40000);
         comboPrecioHasta.addItem(50000);
-        comboPrecioHasta.addItem(100000);
+        
         
         btnConsultar = new JButton("Consultar");
         btnConsultar.setBounds(80,230,100,30);
@@ -72,7 +73,7 @@ public class Venta extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent e)
     {   int pDesde=Integer.parseInt(comboPrecioDesde.getSelectedItem().toString());
         int pHasta=Integer.parseInt(comboPrecioHasta.getSelectedItem().toString());
-        ArrayList a=new ArrayList();
+        ArrayList<Computadora> a=new ArrayList<Computadora>();
         a.addAll(ComputadoraDao.getInstance().buscar(txtMarca.getText(), txtNombre.getText(), pDesde,pHasta));
      // ComputadoraDao.getInstance().buscar(txtMarca.getText(), txtNombre.getText(), pDesde,pHasta);
         if(e.getSource() == btnConsultar)
@@ -80,7 +81,7 @@ public class Venta extends JFrame implements ActionListener
             if(a.isEmpty() ){
                 JOptionPane.showMessageDialog(null, "no se encontro Computadora");
             }else{
-           StockDisponible sd = new StockDisponible();
+           StockDisponible sd = new StockDisponible(a);
            sd.setBounds(0,0,430,500);
            sd.setLocationRelativeTo(null);
            sd.setResizable(false);
@@ -88,6 +89,7 @@ public class Venta extends JFrame implements ActionListener
            sd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
            
         }}
+        
     }
     
 }
