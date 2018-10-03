@@ -32,6 +32,8 @@ public class ComputadoraDao {
         
     }       
     
+    Conexion con = Conexion.getInstance();
+    
     public void agregarComputadora(Computadora computadora){
         String consulta = "insert into computadora values("+computadora.getId()+",'"+computadora.getNombre()+"','"+computadora.getModelo()+"',"+computadora.getPrecio()+");";
         Conexion.getInstance().ejecutarSQL(consulta);
