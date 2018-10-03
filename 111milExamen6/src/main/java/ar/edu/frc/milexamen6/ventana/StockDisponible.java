@@ -15,9 +15,11 @@ public class StockDisponible extends JFrame implements ActionListener
     private JTextArea area;
     private JScrollPane scroll;
     
-    public StockDisponible()
+    private Iterable<Computadora> listaComputadora;
+
+    public StockDisponible(Iterable<Computadora> listaComputadora)
     {
-        
+        this.listaComputadora = listaComputadora;
         
         
         setLayout(null);
@@ -56,8 +58,6 @@ public class StockDisponible extends JFrame implements ActionListener
                 
                 ComputadoraDao computadoraDao = ComputadoraDao.getInstance();
                 
-                List<Computadora> listaComputadora = computadoraDao.devolverComputadora();
-                
                 for(Computadora comp:listaComputadora){
                     
                     area.append("ID: "+comp.getId()+" MODELO: " + comp.getModelo()+" NOMBRE: " + comp.getNombre()+" PRECIO: " + comp.getPrecio());
@@ -65,8 +65,6 @@ public class StockDisponible extends JFrame implements ActionListener
                     
                     
                 }
-                
-                
                 
             }
             
