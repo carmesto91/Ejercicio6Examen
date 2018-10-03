@@ -143,8 +143,8 @@ public class VentanaAgregarComp extends JFrame implements ActionListener{
         int identidad=Integer.parseInt(campoId.getText());
         int precio=Integer.parseInt(campoPrecio.getText());
         Computadora c=new Computadora(identidad, campoNombre.getText(), campoModelo.getText(), precio);
-        ComputadoraDao compDao=ComputadoraDao.getInstance();
-        compDao.agregarComputadora(c);
+        
+        ComputadoraDao.getInstance().agregarComputadora(c);
         
         JOptionPane.showMessageDialog(null, "Computadora agregado con exito");
         System.exit(0);
