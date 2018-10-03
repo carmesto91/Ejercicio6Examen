@@ -17,6 +17,9 @@ public class StockDisponible extends JFrame implements ActionListener
     
     public StockDisponible()
     {
+        
+        
+        
         setLayout(null);
         setTitle("Elija la Computadora a comprar");
         
@@ -27,23 +30,23 @@ public class StockDisponible extends JFrame implements ActionListener
         area = new JTextArea();
         area.setEditable(false);
         scroll = new JScrollPane(area);
-        scroll.setBounds(20,60,250,250);
+        scroll.setBounds(20,60,360,250);
         add(scroll);
         
         lblModelo = new JLabel("Modelo: ");
-        lblModelo.setBounds(20,330,60,30);
+        lblModelo.setBounds(80,330,60,30);
         add(lblModelo);
         
         txtModelo = new JTextField();
-        txtModelo.setBounds(80,330,190,30);
+        txtModelo.setBounds(190,330,190,30);
         add(txtModelo);
         
         btnComprar = new JButton("Comprar");
-        btnComprar.setBounds(20,380,120,30);
+        btnComprar.setBounds(60,380,120,30);
         add(btnComprar);
         
         btnCancelar = new JButton("Cancelar");
-        btnCancelar.setBounds(150,380,120,30);
+        btnCancelar.setBounds(215,380,120,30);
         btnCancelar.addActionListener(this);
         add(btnCancelar);
         

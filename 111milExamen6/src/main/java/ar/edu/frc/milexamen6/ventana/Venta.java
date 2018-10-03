@@ -71,7 +71,7 @@ public class Venta extends JFrame implements ActionListener
         if(e.getSource() == btnConsultar)
         {
            StockDisponible sd = new StockDisponible();
-           sd.setBounds(0,0,330,500);
+           sd.setBounds(0,0,430,500);
            sd.setLocationRelativeTo(null);
            sd.setResizable(false);
            sd.setVisible(true);
