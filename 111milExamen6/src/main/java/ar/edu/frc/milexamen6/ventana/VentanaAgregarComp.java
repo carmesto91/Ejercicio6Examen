@@ -18,9 +18,9 @@ import javax.swing.*;
  */
 public class VentanaAgregarComp extends JFrame implements ActionListener{
     
-    JLabel etiqComputadora,etiqId,etiqNombre,etiqModelo,etiqPrecio;
+    JLabel etiqComputadora,etiqId,etiqNombre,etiqModelo,etiqPrecio,etiqStock;
     
-    JTextField campoId,campoNombre,campoModelo,campoPrecio;
+    JTextField campoId,campoNombre,campoModelo,campoPrecio,campoStock;
     
     JButton ok,cancelar;
     
@@ -97,6 +97,14 @@ public class VentanaAgregarComp extends JFrame implements ActionListener{
         
         panelCentro.add(campoPrecio);
         
+        etiqStock = new JLabel("Stock: ");
+        
+        campoStock = new JTextField(10);
+        
+        panelCentro.add(etiqStock);
+        
+        panelCentro.add(campoStock);
+        
         add(panelCentro,BorderLayout.CENTER);
         ok.addActionListener(this);
         cancelar.addActionListener(new ActionListener() {
@@ -119,7 +127,7 @@ public class VentanaAgregarComp extends JFrame implements ActionListener{
         
         setTitle("Agregar Computadora");
         
-        setSize(200,200);
+        setSize(200,250);
         
         setLocationRelativeTo(this);
         

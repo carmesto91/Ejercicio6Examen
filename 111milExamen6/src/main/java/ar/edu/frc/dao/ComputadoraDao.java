@@ -66,10 +66,10 @@ public class ComputadoraDao {
             
             ResultSet rs = Conexion.getInstance().consultarSQL("select * "
                             + " from computadora "
-                            + " where nombre like '$"+nombre+"$' "
-                                    + " and modelo like '$"+modelo+"$'"
-                                    + " and precio >'$"+preciodesde+"$'"
-                                    + " and precio < '$"+preciohasta+"$'"
+                            + " where nombre like '"+nombre+"%' "
+                                    + " and modelo like '"+modelo+"%'"
+                                    + " and precio >"+preciodesde+""
+                                    + " and precio < "+preciohasta+""
             );
             
             while(rs.next()){
