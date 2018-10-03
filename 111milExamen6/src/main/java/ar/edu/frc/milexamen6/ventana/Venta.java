@@ -1,6 +1,7 @@
 
 package ar.edu.frc.milexamen6.ventana;
 import ar.edu.frc.dao.ComputadoraDao;
+import ar.edu.frc.milexamen6.Computadora;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -71,15 +72,15 @@ public class Venta extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent e)
     {   int pDesde=Integer.parseInt(comboPrecioDesde.getSelectedItem().toString());
         int pHasta=Integer.parseInt(comboPrecioHasta.getSelectedItem().toString());
-        ArrayList a=new ArrayList();
-        a.add(ComputadoraDao.getInstance().buscar(txtMarca.getText(), txtNombre.getText(), pDesde,pHasta));
+        ArrayList<Computadora> a=new ArrayList<Computadora>();
+        a.addAll(ComputadoraDao.getInstance().buscar(txtMarca.getText(), txtNombre.getText(), pDesde,pHasta));
      // ComputadoraDao.getInstance().buscar(txtMarca.getText(), txtNombre.getText(), pDesde,pHasta);
         if(e.getSource() == btnConsultar)
         {
             if(a.isEmpty() ){
                 JOptionPane.showMessageDialog(null, "no se encontro Computadora");
             }else{
-           StockDisponible sd = new StockDisponible();
+           StockDisponible sd = new StockDisponible(a);
            sd.setBounds(0,0,430,500);
            sd.setLocationRelativeTo(null);
            sd.setResizable(false);
