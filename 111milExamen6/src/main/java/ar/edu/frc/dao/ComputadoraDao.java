@@ -37,11 +37,30 @@ public class ComputadoraDao {
         Conexion.getInstance().ejecutarSQL(consulta);
     } 
 
-    Computadora buscar(int idComputadora) {
+    public Computadora buscar(int idComputadora) {
         try {
             
             ResultSet rs = con.consultarSQL(
-                    "select * from computadora where idcomputadora =");
+//                    "select * from computadora where nombre like '$"+ddd+"$' ||modelo like '$"+hhh+"$' || ");
+                    "select * from computadora where id_computadora= "+ idComputadora+"; ");
+            
+            while(rs.next()){
+                
+                Computadora comp = new Computadora(rs.getInt(1),rs.getString("nombre"),rs.getString("modelo"),rs.getInt(4));
+                
+                return comp;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ComputadoraDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public Computadora buscar(String nombre, String modelo) {
+        try {
+            
+            ResultSet rs = con.consultarSQL(
+                    "select * from computadora where nombre like '$"+nombre+"$' ||modelo like '$"+modelo+"$'");
             
             while(rs.next()){
                 
