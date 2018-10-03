@@ -19,7 +19,8 @@ public class Conexion
     private Conexion()
     {
         try{
-            cn = DriverManager.getConnection("jdbc/mysql://localhost:3306/controlstock", "root", "");
+            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/controlstock?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", 
+                    "root", "");
         }catch(SQLException e)
         {
             e.printStackTrace();
@@ -28,7 +29,7 @@ public class Conexion
     public void ejecutarSQL(String sql)
     {
         try{
-            cn.createStatement().executeQuery(sql);
+            cn.createStatement().executeUpdate(sql);
         }catch(SQLException e)
         {
             e.printStackTrace();
