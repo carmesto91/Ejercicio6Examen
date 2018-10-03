@@ -56,12 +56,13 @@ public class Venta extends JFrame implements ActionListener
         comboPrecioHasta = new JComboBox();
         comboPrecioHasta.setBounds(120,150,150,30);
         add(comboPrecioHasta);
+        comboPrecioHasta.addItem(100000);
         comboPrecioHasta.addItem(10000);
         comboPrecioHasta.addItem(20000);
         comboPrecioHasta.addItem(30000);
         comboPrecioHasta.addItem(40000);
         comboPrecioHasta.addItem(50000);
-        comboPrecioHasta.addItem(100000);
+        
         
         btnConsultar = new JButton("Consultar");
         btnConsultar.setBounds(80,230,100,30);
@@ -88,6 +89,7 @@ public class Venta extends JFrame implements ActionListener
            sd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
            
         }}
+        
     }
     
 }
