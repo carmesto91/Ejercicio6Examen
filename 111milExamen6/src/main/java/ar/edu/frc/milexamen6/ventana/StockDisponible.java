@@ -1,6 +1,9 @@
 
 package ar.edu.frc.milexamen6.ventana;
+import ar.edu.frc.dao.ComputadoraDao;
+import ar.edu.frc.milexamen6.Computadora;
 import java.awt.event.*;
+import java.util.List;
 import javax.swing.*;
 
 
@@ -22,6 +25,7 @@ public class StockDisponible extends JFrame implements ActionListener
         add(lblDisponibles);
         
         area = new JTextArea();
+        area.setEditable(false);
         scroll = new JScrollPane(area);
         scroll.setBounds(20,60,250,250);
         add(scroll);
@@ -42,7 +46,35 @@ public class StockDisponible extends JFrame implements ActionListener
         btnCancelar.setBounds(150,380,120,30);
         btnCancelar.addActionListener(this);
         add(btnCancelar);
+        
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowActivated(WindowEvent we) {
+                
+                ComputadoraDao computadoraDao = ComputadoraDao.getInstance();
+                
+                List<Computadora> listaComputadora = computadoraDao.devolverComputadora();
+                
+                for(Computadora comp:listaComputadora){
+                    
+                    area.append(comp.getId() + comp.getModelo() + comp.getNombre() + comp.getPrecio());
+                    area.append("/br");
+                    
+                    
+                }
+                
+                
+                
+            }
+            
+            
+            
+});
+        
+        
+        
     }
+    
     public void actionPerformed(ActionEvent e)
     {
         if(e.getSource()== btnCancelar)

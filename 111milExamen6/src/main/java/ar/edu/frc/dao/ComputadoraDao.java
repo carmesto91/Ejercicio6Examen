@@ -18,38 +18,23 @@ import java.util.logging.Logger;
  * @author alumno
  */
 public class ComputadoraDao {
-    
-    
     private static ComputadoraDao instance;
     
     public static ComputadoraDao getInstance(){
         
-        if(instance == null){
-            
-            instance = new ComputadoraDao();
-            
-        }
-        
+        if(instance == null){            
+            instance = new ComputadoraDao();            
+        }        
         return instance;
-        
-        
     }
     
     private ComputadoraDao(){
         
-        
-        
-    }
-    
-    Conexion con = Conexion.getInstance();
+    }       
     
     public void agregarComputadora(Computadora computadora){
-        
-        
         String consulta = "insert into computadora values("+computadora.getId()+",'"+computadora.getNombre()+"','"+computadora.getModelo()+"',"+computadora.getPrecio()+");";
-        con.ejecutarSQL(consulta);
-        
-        
+        Conexion.getInstance().ejecutarSQL(consulta);
     } 
 
     Computadora buscar(int idComputadora) {
@@ -64,28 +49,22 @@ public class ComputadoraDao {
         
         
         
+        
+        
         try {
             
-            ResultSet rs = con.consultarSQL("select * from computadora");
+            ResultSet rs = Conexion.getInstance().consultarSQL("select * from computadora");
             
             while(rs.next()){
                 
                 Computadora comp = new Computadora(rs.getInt(1),rs.getString("nombre"),rs.getString("modelo"),rs.getInt(4));
                 
-                computadora.add(comp);
-                
+                computadora.add(comp);                
             }
         } catch (SQLException ex) {
             Logger.getLogger(ComputadoraDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        return computadora;
-        
-        
-        
-        
-    }
-    
-    
-    
+        return computadora;        
+    }    
 }
