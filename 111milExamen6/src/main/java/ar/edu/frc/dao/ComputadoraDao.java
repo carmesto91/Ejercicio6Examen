@@ -38,7 +38,20 @@ public class ComputadoraDao {
     } 
 
     Computadora buscar(int idComputadora) {
-        //
+        try {
+            
+            ResultSet rs = con.consultarSQL(
+                    "select * from computadora where idcomputadora =");
+            
+            while(rs.next()){
+                
+                Computadora comp = new Computadora(rs.getInt(1),rs.getString("nombre"),rs.getString("modelo"),rs.getInt(4));
+                
+                return comp;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ComputadoraDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return null;
     }
     
