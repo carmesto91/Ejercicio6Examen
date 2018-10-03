@@ -1,6 +1,7 @@
 
 package ar.edu.frc.milexamen6.ventana;
 import ar.edu.frc.dao.ComputadoraDao;
+import ar.edu.frc.milexamen6.Computadora;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
