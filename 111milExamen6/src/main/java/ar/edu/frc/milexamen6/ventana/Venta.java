@@ -1,5 +1,6 @@
 
 package ar.edu.frc.milexamen6.ventana;
+import ar.edu.frc.dao.ComputadoraDao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -68,8 +69,11 @@ public class Venta extends JFrame implements ActionListener
     }
     public void actionPerformed(ActionEvent e)
     {   
+        
+        ComputadoraDao.getInstance().buscar(ICONIFIED);
+        
         if(e.getSource() == btnConsultar)
-        {
+        {   
            StockDisponible sd = new StockDisponible();
            sd.setBounds(0,0,330,500);
            sd.setLocationRelativeTo(null);
