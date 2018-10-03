@@ -43,7 +43,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
         if(e.getSource() == comprar)
         {
              Venta v = new Venta();
-             v.setBounds(0,0,400,250);
+             v.setBounds(0,0,500,350);
              v.setLocationRelativeTo(null);
              v.setResizable(false);
              v.setVisible(true);
