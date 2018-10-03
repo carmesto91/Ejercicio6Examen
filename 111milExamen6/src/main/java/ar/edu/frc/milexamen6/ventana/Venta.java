@@ -39,7 +39,12 @@ public class Venta extends JFrame implements ActionListener
         comboPrecioDesde = new JComboBox();
         comboPrecioDesde.setBounds(120,100,150,30);
         add(comboPrecioDesde);
-                
+        comboPrecioDesde.addItem(0);
+        comboPrecioDesde.addItem(10000);
+        comboPrecioDesde.addItem(20000);
+        comboPrecioDesde.addItem(30000);
+        comboPrecioDesde.addItem(40000);
+        comboPrecioDesde.addItem(50000);
         
         lblPrecioHasta = new JLabel("Precio Hasta: ");
         lblPrecioHasta.setBounds(20,150,100,30);
@@ -48,6 +53,12 @@ public class Venta extends JFrame implements ActionListener
         comboPrecioHasta = new JComboBox();
         comboPrecioHasta.setBounds(120,150,150,30);
         add(comboPrecioHasta);
+        comboPrecioHasta.addItem(10000);
+        comboPrecioHasta.addItem(20000);
+        comboPrecioHasta.addItem(30000);
+        comboPrecioHasta.addItem(40000);
+        comboPrecioHasta.addItem(50000);
+        comboPrecioHasta.addItem(100000);
         
         btnConsultar = new JButton("Consultar");
         btnConsultar.setBounds(80,230,100,30);
