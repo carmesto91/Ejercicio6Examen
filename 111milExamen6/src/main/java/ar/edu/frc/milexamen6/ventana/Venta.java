@@ -24,7 +24,7 @@ public class Venta extends JFrame implements ActionListener
         txtMarca.setBounds(120,20,150,30);
         add(txtMarca);
         
-        lblNombre=new JLabel("Nombre:");
+        lblNombre=new JLabel("Modelo:");
         lblNombre.setBounds(20, 60, 100, 30);
         add(lblNombre);
         
@@ -67,7 +67,7 @@ public class Venta extends JFrame implements ActionListener
         
     }
     public void actionPerformed(ActionEvent e)
-    {
+    {   
         if(e.getSource() == btnConsultar)
         {
            StockDisponible sd = new StockDisponible();
