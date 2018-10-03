@@ -58,7 +58,7 @@ public class ComputadoraDao {
         return null;
     }
     
-    public Computadora buscar(String nombre, String modelo, int preciodesde, int preciohasta) {
+    public List<Computadora> buscar(String nombre, String modelo, int preciodesde, int preciohasta) {
                     
         List<Computadora> computadora = new ArrayList();
 
